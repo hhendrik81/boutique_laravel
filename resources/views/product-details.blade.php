@@ -6,5 +6,5 @@
 @endsection
  
 @section('contenu')
-    <p>Fiche du produit {{ $numero }}</p>
+    <h1>Fiche du produit {{ $numero }}</h1>
 @endsection
