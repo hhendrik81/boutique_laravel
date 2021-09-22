@@ -32,12 +32,15 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/product', [ProductController::class, 'product']);
 
+Route::get('/product/list', [ProductController::class, 'list']);
+
 // Route::get('/product/{id}', function () {
 //     return ('Fiche du produit {id}');
 // });
 
 Route::get('/product/{id}', [ProductController::class, 'productId']);
 
+Route::get('/product/show/{id}', [ProductController::class, 'show']);
 
 // Route::get('/cart', function () {
 //     return ('Panier');
@@ -49,3 +52,4 @@ Route::get('/cart', [CartController::class, 'cart']);
 
 
 
+ 
