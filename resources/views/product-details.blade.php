@@ -2,9 +2,15 @@
 @extends('template')
  
 @section('titre')
-    Produit {{$numero}}
+
+    {{ $product->Nom }}
+    
 @endsection
  
 @section('contenu')
-    <h1>Fiche du produit {{ $numero }}</h1>
+   
+    <h3>{{ $product->Nom }}</h3>
+    <p>{{ $product->Prix }} €</p>
+
 @endsection
+

@@ -20,31 +20,17 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-// Route::get('/', function () {
-//     return ('Home Page');
-// });
+Route::get('/product/list', [ProductController::class, 'productList']);
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/product/productByName', [ProductController::class, 'getByName']);
 
-// Route::get('/product', function () {
-//     return ('Liste des produits');
-// });
-
-Route::get('/product', [ProductController::class, 'product']);
-
-Route::get('/product/list', [ProductController::class, 'list']);
-
-// Route::get('/product/{id}', function () {
-//     return ('Fiche du produit {id}');
-// });
+Route::get('/product/productByPrice', [ProductController::class, 'getByPrice']);
 
 Route::get('/product/{id}', [ProductController::class, 'productId']);
 
-Route::get('/product/show/{id}', [ProductController::class, 'show']);
 
-// Route::get('/cart', function () {
-//     return ('Panier');
-// });
+
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/cart', [CartController::class, 'cart']);
 

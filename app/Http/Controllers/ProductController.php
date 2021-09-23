@@ -7,30 +7,31 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function product()
+    public function productList()
     {
-        return view('product-list');
+        $products = Product::all();
+        return view('product-list', ['products' => $products]);
     }
+
+    public function getByName()
+    {
+        $products = Product::orderBy('Nom')->get();
+        return view('product-list', ['products' => $products]);
+    }
+
+    public function getByPrice()
+    {
+        $products = Product::orderBy('Prix')->get();
+        return view('product-list', ['products' => $products]);
+    }
+
 
     public function productId($id)
     {
-        return view('product-details')->with('numero',$id);
-    }
-
-    public function list()
-    {
-        $products = Product::all();
-        return view('product-list', array('products' => $products));
+        $product = Product::where('id', $id)->first();
+        return view('product-details', ['product' => $product]);
     }
 
 
-    public function show(Product $id)
-    {
-        
-        
-        
-        
-        return view('product-details')->with('numero',$id);
-    }
 }
 
